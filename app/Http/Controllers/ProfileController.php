@@ -50,7 +50,7 @@ class ProfileController extends Controller
 
         $request->validate([
             'name'=> ['required', 'string', 'max:255'],
-            'bio'=> ['nullable', 'string', 'max:2000'],
+            'bio'=> ['nullable', 'string', 'max:255'],
             'phone'=> ['nullable', 'string', 'max:15'],
 
         ]);
