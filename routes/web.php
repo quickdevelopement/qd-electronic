@@ -24,9 +24,7 @@ Route::middleware('auth')->group(function () {
         return 'setting';
     })->name('setting');
 
-    Route::get('/orders', function () {
-        return 'dashboard.orders';
-    })->name('orders');
+  
 
 });
 
@@ -36,3 +34,5 @@ require __DIR__.'/auth.php';
 require __DIR__.'/profile.php';
 require __DIR__.'/product.php';
 require __DIR__.'/inventory.php';
+require __DIR__.'/cart.php';
+require __DIR__.'/order.php';

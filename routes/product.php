@@ -25,11 +25,5 @@ Route::get('/products', [ProductController::class, 'index'])->name('products');
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('product.show');
 
 
-Route::get('/carts', function(){
-    return 'frontend.carts';
-})->name('carts');
-Route::post('/cart/add', function(){
-    return 'frontend.cart.add';
-})->name('cart.add');
 
 
