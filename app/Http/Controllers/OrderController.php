@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\ShippingAddress;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +24,9 @@ class OrderController extends Controller
     {
         $cart = Auth::user()->cart ?? null;
         $user= Auth::user();
-        return view('frontend.checkout.index', ['cart' => $cart, 'user' => $user]);
+        $order = ShippingAddress::all()->where('user_id', $user->id)->first() ?? null;
+
+        return view('frontend.checkout.index', ['cart' => $cart, 'user' => $user, 'order' => $order]);
 
     }
 
@@ -67,9 +70,7 @@ class OrderController extends Controller
         $cart->items()->delete();
 
         flash()->success('Order placed successfully.');
-        return view('frontend.order.show', [
-            'order' => $order,
-        ]);
+        return redirect()->route('orders.show', ['order' => $order->id]);
 
     }
 

@@ -5,7 +5,7 @@
         </x-slot>
 
 
-        <div class="max-w-4xl mx-auto p-6">
+        <div class="max-w-4xl mx-auto p-6 dark:text-white">
             <h2 class="text-2xl font-bold">Order #{{ $order->order_number }}</h2>
             <p> Delivery Status: <span class="font-semibold ml-3 px-4 py-1 rounded-md  text-white {{$order->status === 'delivered' ? 'bg-green-500' : 'bg-red-500'}}">{{ ucfirst($order->status) }}</span></p>
 

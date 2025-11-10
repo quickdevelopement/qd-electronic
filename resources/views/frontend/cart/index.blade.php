@@ -5,10 +5,9 @@
     @if($cart !== null)
         
     <div class="max-w-4xl mx-auto p-6">
-        <h2 class="text-2xl font-bold mb-4">Your Cart</h2>
-        
+        <h2 class="text-2xl font-bold mb-4 dark:text-white">Your Cart</h2>
         @forelse($cart->items as $item)
-            <div class="flex justify-between items-center border-b py-2">
+            <div class="flex justify-between items-center border-b dark:border-slate-500 py-2 dark:text-white">
                 <div>
                     <img src="{{ asset('images/products/'.$item->product->image) }}" alt="{{ $item->product->title }}" class="w-16 h-16 object-cover rounded">
                 </div>
@@ -24,8 +23,8 @@
         @empty
             <p class="text-4xl font-bold text-red-600">No items in cart</p>
         @endforelse
-        <hr class="my-4 border-2 border-green-600">
-        <div class="mt-4 flex justify-between">
+        <hr class="my-4 border-2 border-green-600 ">
+        <div class="mt-4 flex justify-between dark:text-white">
             <span class="font-bold">Total:</span>
             <span>৳ {{ $cart->total() }}</span>
         </div>
