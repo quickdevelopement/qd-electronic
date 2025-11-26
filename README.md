@@ -14,3 +14,8 @@
 ### Working Process
 - [x] Authentication
 - [x] Profile
+- [x] Dashboard 
+- [x] Stripe Payments
+- [x] Order Confirm with address
+- [x] Invoice
+- [x] Done

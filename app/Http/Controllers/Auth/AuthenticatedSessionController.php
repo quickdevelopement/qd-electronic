@@ -31,7 +31,7 @@ class AuthenticatedSessionController extends Controller
         flash()->success('Login Successfully');
 
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        return redirect()->intended(route('orders', absolute: false));
     }
 
     /**
